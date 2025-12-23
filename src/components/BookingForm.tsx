@@ -28,20 +28,15 @@ export default function BookingForm({ service }: { service: Service }) {
         }
 
         if (user) {
-            // ideally check profile status here via API
-            fetch('/api/auth/status', {
-                headers: { 'Authorization': `Bearer ${user.projectId /* wait, token not here */}` }
-            }).then(res => res.json()).then(data => {
-                // Need token. get it.
-                user.getIdToken().then(token => {
-                    fetch('/api/auth/status', {
-                        headers: { 'Authorization': `Bearer ${token}` }
-                    }).then(r => r.json()).then(d => {
-                        if (!d.profileComplete) {
-                            toast.error('Please complete your profile to book');
-                            router.push('/profile-complete');
-                        }
-                    });
+            // Check profile status
+            user.getIdToken().then(token => {
+                fetch('/api/auth/status', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                }).then(r => r.json()).then(d => {
+                    if (!d.profileComplete) {
+                        toast.error('Please complete your profile to book');
+                        router.push('/profile-complete');
+                    }
                 });
             });
         }
