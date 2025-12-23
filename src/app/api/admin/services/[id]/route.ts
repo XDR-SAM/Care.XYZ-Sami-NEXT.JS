@@ -17,7 +17,7 @@ async function checkAdmin(request: Request) {
     }
 }
 
-export async function PATCH(request: Request, { params }: { params: { id: string } }) {
+export async function PATCH(request: Request, { params }: { params: Promise<{ id: string }> }) {
     if (!(await checkAdmin(request))) {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 403 });
     }
@@ -33,7 +33,7 @@ export async function PATCH(request: Request, { params }: { params: { id: string
     return NextResponse.json({ message: 'Service updated' });
 }
 
-export async function DELETE(request: Request, { params }: { params: { id: string } }) {
+export async function DELETE(request: Request, { params }: { params: Promise<{ id: string }> }) {
     if (!(await checkAdmin(request))) {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 403 });
     }

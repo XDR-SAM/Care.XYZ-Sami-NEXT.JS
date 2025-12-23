@@ -3,7 +3,7 @@ import { adminAuth } from '@/lib/firebaseAdmin';
 import { ObjectId } from 'mongodb';
 import { NextResponse } from 'next/server';
 
-export async function PATCH(request: Request, { params }: { params: { id: string } }) {
+export async function PATCH(request: Request, { params }: { params: Promise<{ id: string }> }) {
     const authHeader = request.headers.get('Authorization');
     if (!authHeader?.startsWith('Bearer ')) {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
