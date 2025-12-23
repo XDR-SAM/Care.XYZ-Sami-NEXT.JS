@@ -1,6 +1,7 @@
 import Link from 'next/link';
+import type { Service } from '@/types';
 
-async function getServices() {
+async function getServices(): Promise<Service[]> {
     // Option 1: Fetch via API (requires absolute URL)
     // Option 2: Direct DB call (Better for Server Components)
     // I'll use Direct DB call for stability, as localhost fetches can be flaky in some envs without proper setup.
@@ -17,8 +18,15 @@ async function getServices() {
     const services = await db.collection('services').find({}).toArray();
     // Serialize _id
     return services.map(service => ({
-        ...service,
-        _id: service._id.toString()
+        _id: service._id.toString(),
+        title: service.title as string,
+        description: service.description as string,
+        imageUrl: service.imageUrl as string | undefined,
+        chargePerHour: service.chargePerHour as number,
+        features: service.features as string[] | undefined,
+        category: service.category as string | undefined,
+        createdAt: service.createdAt as Date | undefined,
+        updatedAt: service.updatedAt as Date | undefined,
     }));
 }
 
@@ -43,7 +51,7 @@ export default async function Home() {
             <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
                 <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-8">Our Services</h2>
                 <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:gap-x-8">
-                    {services.map((service: any) => (
+                    {services.map((service: Service) => (
                         <div key={service._id} className="group relative bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden">
                             <div className="aspect-w-16 aspect-h-9 bg-gray-200">
                                 {/* Placeholder or Image */}

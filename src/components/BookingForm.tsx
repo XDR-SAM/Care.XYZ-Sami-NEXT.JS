@@ -4,8 +4,9 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
+import type { Service } from '@/types';
 
-export default function BookingForm({ service }: { service: any }) {
+export default function BookingForm({ service }: { service: Service }) {
     const { user, loading } = useAuth();
     const router = useRouter();
 

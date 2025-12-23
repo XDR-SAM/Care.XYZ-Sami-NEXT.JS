@@ -1,19 +1,27 @@
 import { getDatabase } from '@/lib/mongodb';
 import { ObjectId } from 'mongodb';
 import Link from 'next/link';
+import type { Service } from '@/types';
 
-async function getService(id: string) {
+async function getService(id: string): Promise<Service | null> {
     if (!ObjectId.isValid(id)) return null;
     const db = await getDatabase();
     const service = await db.collection('services').findOne({ _id: new ObjectId(id) });
     if (!service) return null;
     return {
-        ...service,
-        _id: service._id.toString()
+        _id: service._id.toString(),
+        title: service.title as string,
+        description: service.description as string,
+        imageUrl: service.imageUrl as string | undefined,
+        chargePerHour: service.chargePerHour as number,
+        features: service.features as string[] | undefined,
+        category: service.category as string | undefined,
+        createdAt: service.createdAt as Date | undefined,
+        updatedAt: service.updatedAt as Date | undefined,
     };
 }
 
-export default async function ServiceDetails({ params }: { params: { id: string } }) {
+export default async function ServiceDetails({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
     const service = await getService(id);
 
