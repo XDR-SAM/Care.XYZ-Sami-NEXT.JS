@@ -9,6 +9,11 @@ import { Toaster } from "react-hot-toast";
 export const metadata: Metadata = {
     title: "Care.xyz - Trusted Care Services",
     description: "Book reliable babysitting and elderly care services",
+    icons: {
+        icon: '/logo.jpg',
+        shortcut: '/logo.jpg',
+        apple: '/logo.jpg',
+    },
 };
 
 export default function RootLayout({
