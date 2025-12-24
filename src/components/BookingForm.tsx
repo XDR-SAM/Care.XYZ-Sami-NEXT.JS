@@ -95,7 +95,7 @@ export default function BookingForm({ service }: { service: Service }) {
                             min="1"
                             value={duration}
                             onChange={(e) => setDuration(Number(e.target.value))}
-                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                            className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
                         />
                     </div>
 
@@ -107,7 +107,7 @@ export default function BookingForm({ service }: { service: Service }) {
                                 required
                                 value={location.division}
                                 onChange={(e) => setLocation({ ...location, division: e.target.value })}
-                                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
                             />
                         </div>
                         <div>
@@ -117,7 +117,7 @@ export default function BookingForm({ service }: { service: Service }) {
                                 required
                                 value={location.district}
                                 onChange={(e) => setLocation({ ...location, district: e.target.value })}
-                                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
                             />
                         </div>
                         <div>
@@ -127,7 +127,7 @@ export default function BookingForm({ service }: { service: Service }) {
                                 required
                                 value={location.city}
                                 onChange={(e) => setLocation({ ...location, city: e.target.value })}
-                                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
                             />
                         </div>
                         <div>
@@ -137,7 +137,7 @@ export default function BookingForm({ service }: { service: Service }) {
                                 required
                                 value={location.area}
                                 onChange={(e) => setLocation({ ...location, area: e.target.value })}
-                                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
                             />
                         </div>
                     </div>
@@ -149,21 +149,21 @@ export default function BookingForm({ service }: { service: Service }) {
                             rows={3}
                             value={location.address}
                             onChange={(e) => setLocation({ ...location, address: e.target.value })}
-                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                            className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
                         />
                     </div>
 
                     <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-md">
                         <div className="flex justify-between items-center">
                             <span className="text-gray-900 dark:text-white font-medium">Total Cost:</span>
-                            <span className="text-2xl font-bold text-indigo-600">${totalCost}</span>
+                            <span className="text-2xl font-bold text-purple-600 dark:text-purple-400">${totalCost}</span>
                         </div>
                     </div>
 
                     <button
                         type="submit"
                         disabled={submitting}
-                        className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
+                        className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50 dark:bg-purple-500 dark:hover:bg-purple-600"
                     >
                         {submitting ? 'Processing...' : 'Confirm Booking'}
                     </button>

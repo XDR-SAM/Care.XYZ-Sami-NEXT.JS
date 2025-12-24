@@ -20,12 +20,12 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning>
             <body className="antialiased bg-gray-50 dark:bg-gray-900">
                 <ThemeProvider>
-                    <AuthProvider>
+                <AuthProvider>
                         <div className="flex flex-col min-h-screen">
-                            <Navbar />
-                            <main className="flex-grow">
-                                {children}
-                            </main>
+                    <Navbar />
+                            <main className="grow">
+                        {children}
+                    </main>
                             <Footer />
                         </div>
                         <Toaster 
@@ -49,7 +49,7 @@ export default function RootLayout({
                                 },
                             }}
                         />
-                    </AuthProvider>
+                </AuthProvider>
                 </ThemeProvider>
             </body>
         </html>

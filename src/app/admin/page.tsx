@@ -155,7 +155,7 @@ export default function AdminDashboard() {
                                         <select
                                             value={booking.status}
                                             onChange={(e) => handleStatusUpdate(booking._id, e.target.value)}
-                                            className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white dark:bg-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
+                                            className="mt-1 block w-full py-2 px-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
                                         >
                                             <option value="Pending">Pending</option>
                                             <option value="Confirmed">Confirm</option>
@@ -181,16 +181,16 @@ export default function AdminDashboard() {
 
                     {showServiceForm && (
                         <form onSubmit={handleServiceSubmit} className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg mb-6 space-y-4">
-                            <input required className="w-full p-2 border rounded" placeholder="Title" value={serviceData.title} onChange={e => setServiceData({ ...serviceData, title: e.target.value })} />
-                            <textarea required className="w-full p-2 border rounded" placeholder="Description" value={serviceData.description} onChange={e => setServiceData({ ...serviceData, description: e.target.value })} />
-                            <select className="w-full p-2 border rounded" value={serviceData.category} onChange={e => setServiceData({ ...serviceData, category: e.target.value })}>
+                            <input required className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500" placeholder="Title" value={serviceData.title} onChange={e => setServiceData({ ...serviceData, title: e.target.value })} />
+                            <textarea required className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500" placeholder="Description" value={serviceData.description} onChange={e => setServiceData({ ...serviceData, description: e.target.value })} />
+                            <select className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500" value={serviceData.category} onChange={e => setServiceData({ ...serviceData, category: e.target.value })}>
                                 <option value="Baby Care">Baby Care</option>
                                 <option value="Elderly Care">Elderly Care</option>
                                 <option value="Sick People Care">Sick People Care</option>
                             </select>
-                            <input required type="number" className="w-full p-2 border rounded" placeholder="Charge Per Hour" value={serviceData.chargePerHour} onChange={e => setServiceData({ ...serviceData, chargePerHour: e.target.value })} />
-                            <input className="w-full p-2 border rounded" placeholder="Image URL" value={serviceData.imageUrl} onChange={e => setServiceData({ ...serviceData, imageUrl: e.target.value })} />
-                            <input className="w-full p-2 border rounded" placeholder="Features (comma separated)" value={serviceData.features} onChange={e => setServiceData({ ...serviceData, features: e.target.value })} />
+                            <input required type="number" className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500" placeholder="Charge Per Hour" value={serviceData.chargePerHour} onChange={e => setServiceData({ ...serviceData, chargePerHour: e.target.value })} />
+                            <input className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500" placeholder="Image URL" value={serviceData.imageUrl} onChange={e => setServiceData({ ...serviceData, imageUrl: e.target.value })} />
+                            <input className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500" placeholder="Features (comma separated)" value={serviceData.features} onChange={e => setServiceData({ ...serviceData, features: e.target.value })} />
                             <button type="submit" className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Save Service</button>
                         </form>
                     )}

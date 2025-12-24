@@ -2,15 +2,13 @@
 
 import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
-import { useTheme } from '@/context/ThemeContext';
 import { auth } from '@/lib/firebase';
 import { signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
-import { Moon, Sun, LayoutDashboard } from 'lucide-react';
+import { LayoutDashboard } from 'lucide-react';
 
 export default function Navbar() {
     const { user, loading, userRole } = useAuth();
-    const { theme, toggleTheme } = useTheme();
     const router = useRouter();
 
     const handleLogout = async () => {
@@ -92,19 +90,6 @@ export default function Navbar() {
                                 )}
                             </>
                         )}
-                        
-                        {/* Dark Mode Toggle */}
-                        <button
-                            onClick={toggleTheme}
-                            className="p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-purple-100 dark:hover:bg-purple-900 transition-colors"
-                            aria-label="Toggle theme"
-                        >
-                            {theme === 'dark' ? (
-                                <Sun className="h-5 w-5" />
-                            ) : (
-                                <Moon className="h-5 w-5" />
-                            )}
-                        </button>
                     </div>
                 </div>
             </div>
