@@ -54,7 +54,12 @@ export async function POST(request: Request) {
         // Use user.email from DB or decodedToken.email
         const userEmail = user.email || decodedToken.email;
         if (userEmail) {
-            await sendBookingInvoice(userEmail, newBooking);
+            // Add the inserted ID to booking details for invoice
+            const bookingWithId = {
+                ...newBooking,
+                _id: result.insertedId
+            };
+            await sendBookingInvoice(userEmail, bookingWithId);
         }
 
         return NextResponse.json({ message: 'Booking created', bookingId: result.insertedId }, { status: 201 });
