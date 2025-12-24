@@ -112,7 +112,7 @@ export default function AdminDashboard() {
                 <nav className="-mb-px flex space-x-8">
                     <button
                         onClick={() => setActiveTab('bookings')}
-                        className={`${activeTab === 'bookings' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'} whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm`}
+                        className={`${activeTab === 'bookings' ? 'border-purple-500 text-purple-600 dark:text-purple-400' : 'border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300'} whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm`}
                     >
                         Bookings
                     </button>
@@ -155,7 +155,7 @@ export default function AdminDashboard() {
                                         <select
                                             value={booking.status}
                                             onChange={(e) => handleStatusUpdate(booking._id, e.target.value)}
-                                            className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white dark:bg-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                            className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white dark:bg-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
                                         >
                                             <option value="Pending">Pending</option>
                                             <option value="Confirmed">Confirm</option>
@@ -173,7 +173,7 @@ export default function AdminDashboard() {
                     <div className="mb-4">
                         <button
                             onClick={() => setShowServiceForm(!showServiceForm)}
-                            className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700"
+                            className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600"
                         >
                             {showServiceForm ? 'Cancel' : 'Add New Service'}
                         </button>
@@ -201,7 +201,7 @@ export default function AdminDashboard() {
                                 <button onClick={() => handleDeleteService(service._id)} className="absolute top-2 right-2 text-red-500 hover:text-red-700">Delete</button>
                                 <h3 className="font-bold">{service.title}</h3>
                                 <p className="text-sm text-gray-500">{service.category}</p>
-                                <p className="text-indigo-600 font-bold">${service.chargePerHour}/hr</p>
+                                <p className="text-purple-600 dark:text-purple-400 font-bold">${service.chargePerHour}/hr</p>
                             </div>
                         ))}
                     </div>

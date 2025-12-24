@@ -47,7 +47,7 @@ export default async function ServiceDetails({ params }: { params: Promise<{ id:
 
                     <div className="mt-3">
                         <h2 className="sr-only">Product information</h2>
-                        <p className="text-3xl text-indigo-600">${service.chargePerHour} <span className="text-lg text-gray-500">/ hour</span></p>
+                        <p className="text-3xl text-purple-600 dark:text-purple-400">${service.chargePerHour} <span className="text-lg text-gray-500 dark:text-gray-400">/ hour</span></p>
                     </div>
 
                     <div className="mt-6">
@@ -67,7 +67,7 @@ export default async function ServiceDetails({ params }: { params: Promise<{ id:
                     <div className="mt-10 flex">
                         <Link
                             href={`/booking/${service._id}`}
-                            className="max-w-xs flex-1 bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:w-full"
+                            className="max-w-xs flex-1 bg-purple-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 sm:w-full dark:bg-purple-500 dark:hover:bg-purple-600"
                         >
                             Book This Service
                         </Link>

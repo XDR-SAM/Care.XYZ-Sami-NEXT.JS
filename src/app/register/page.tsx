@@ -65,7 +65,7 @@ export default function RegisterPage() {
                         name="name"
                         type="text"
                         required
-                        className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm dark:bg-gray-700 dark:text-white dark:border-gray-600"
                         placeholder="Full Name"
                         value={formData.name}
                         onChange={handleChange}
@@ -74,7 +74,7 @@ export default function RegisterPage() {
                         name="email"
                         type="email"
                         required
-                        className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm dark:bg-gray-700 dark:text-white dark:border-gray-600"
                         placeholder="Email address"
                         value={formData.email}
                         onChange={handleChange}
@@ -83,7 +83,7 @@ export default function RegisterPage() {
                         name="contact"
                         type="text"
                         required
-                        className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm dark:bg-gray-700 dark:text-white dark:border-gray-600"
                         placeholder="Contact Number"
                         value={formData.contact}
                         onChange={handleChange}
@@ -92,7 +92,7 @@ export default function RegisterPage() {
                         name="nidNo"
                         type="text"
                         required
-                        className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm dark:bg-gray-700 dark:text-white dark:border-gray-600"
                         placeholder="National ID Number"
                         value={formData.nidNo}
                         onChange={handleChange}
@@ -101,7 +101,7 @@ export default function RegisterPage() {
                         name="password"
                         type="password"
                         required
-                        className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm dark:bg-gray-700 dark:text-white dark:border-gray-600"
                         placeholder="Password"
                         value={formData.password}
                         onChange={handleChange}
@@ -110,13 +110,13 @@ export default function RegisterPage() {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
+                        className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50 dark:bg-purple-500 dark:hover:bg-purple-600"
                     >
                         {loading ? 'Creating Account...' : 'Register'}
                     </button>
                 </form>
                 <div className="text-center text-sm">
-                    <Link href="/login" className="font-medium text-indigo-600 hover:text-indigo-500">
+                    <Link href="/login" className="font-medium text-purple-600 hover:text-purple-500 dark:text-purple-400 dark:hover:text-purple-300">
                         Already have an account? Sign in
                     </Link>
                 </div>
