@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import type { Service } from '@/types';
 
+// Force dynamic rendering to always fetch fresh data
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 async function getServices(): Promise<Service[]> {
     // Option 1: Fetch via API (requires absolute URL)
     // Option 2: Direct DB call (Better for Server Components)

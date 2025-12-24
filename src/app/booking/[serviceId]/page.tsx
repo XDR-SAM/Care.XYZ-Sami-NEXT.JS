@@ -3,6 +3,10 @@ import { ObjectId } from 'mongodb';
 import BookingForm from '@/components/BookingForm';
 import type { Service } from '@/types';
 
+// Force dynamic rendering to always fetch fresh data
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 async function getService(id: string): Promise<Service | null> {
     if (!ObjectId.isValid(id)) return null;
     const db = await getDatabase();
