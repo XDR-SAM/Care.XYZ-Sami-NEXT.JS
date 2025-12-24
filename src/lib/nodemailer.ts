@@ -8,6 +8,7 @@ export const transporter = nodemailer.createTransport({
     }
 });
 
+
 export async function sendBookingInvoice(to: string, bookingDetails: any) {
     const bookingDate = bookingDetails.bookingDate 
         ? new Date(bookingDetails.bookingDate).toLocaleDateString('en-US', { 
